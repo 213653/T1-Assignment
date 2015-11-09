@@ -1,0 +1,421 @@
+<html>
+<head>
+<title> T1 Assignment </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+int rectLength;
+int rectHeight;
+int rectGap;
+int code;
+int power;
+
+int keysEntered;
+
+int a;
+int b;
+int c;
+int d;
+int e;
+int f; 
+
+
+PImage oneVariable;
+PImage twoVariable;
+PImage threeVariable;
+PImage fourVariable;
+PImage fiveVariable;
+PImage sixVariable;
+PImage sevenVariable;
+PImage eightVariable;
+PImage nineVariable;
+PImage zeroVariable;
+PImage asterixVariable;
+PImage enterVariable;
+PImage resetVariable;
+
+
+
+
+
+
+
+
+
+
+void setup()
+{
+
+	size( 1500, 2000 );
+	frameRate( 30 );
+	
+	rectLength = 100;
+	rectHeight = 100;
+	rectGap = 5;
+	
+	X = 7;
+	Z = 1;
+	
+	C = 6;
+	V = 1;
+	
+	B = 5;
+	N = 1;
+	
+	A = 4;
+	S = 1;
+	
+	keysEntered = 0;
+	z = 0;
+	
+	//not sure if i will use a and b
+	a = 0;
+	b = 0;
+	code = 0;
+	power = 1;
+	
+	//image upload
+	oneVariable = loadImage("images/one.png");
+	twoVariable = loadImage("images/two.png");
+	threeVariable = loadImage("images/three.png");
+	fourVariable = loadImage("images/four.png");
+	fiveVariable = loadImage("images/five.png");
+	sixVariable = loadImage("images/six.png");
+	sevenVariable = loadImage("images/seven.png");
+	eightVariable = loadImage("images/eight.png");
+	nineVariable = loadImage("images/nine.png");
+	zeroVariable = loadImage("images/zero.png");
+	asterixVariable = loadImage("images/asterix.png");
+	enterVariable = loadImage("images/enter.png");
+	resetVariable = loadImage("images/reset.png");
+
+
+
+
+
+
+
+
+
+
+
+	
+
+}
+
+
+void draw()
+{
+	background(0,0,0);
+	
+	//cubes
+	
+	fill(255,0,0);
+	rect(rectLength,rectHeight,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight,rectLength,rectHeight);
+	
+	rect(rectLength,rectHeight*2+rectGap,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight*2+rectGap,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight*2+rectGap,rectLength,rectHeight);
+	
+	rect(rectLength,rectHeight*3+rectGap*2,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight*3+rectGap*2,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight*3+rectGap*2,rectLength,rectHeight);
+	
+	rect(rectLength,rectHeight*4+rectGap*3,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight*4+rectGap*3,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight*4+rectGap*3,rectLength,rectHeight);
+	
+	rect(510,310,400,100);
+	
+	rect (510,415,200,100);
+
+	
+	//images
+
+	image (oneVariable, 100,100);
+	image (twoVariable, 205,100);
+	image (threeVariable, 310,100);
+	image (fourVariable, 100,205);
+	image (fiveVariable, 205,205);
+	image (sixVariable, 310,205);
+	image (sevenVariable, 100,310);
+	image (eightVariable, 205,310);
+	image (nineVariable, 310,310);
+	image (zeroVariable, 205,415);
+	image (enterVariable, 510,415);
+
+	text(X,500,50); 
+	text(C,550,50);
+	text(B,600,50);
+	text(A,650,50);
+	
+	if (mousePressed == true)
+		{
+ 		if (mouseButton == LEFT && Z == 1)
+ 			{	 		
+ 			 	if (mouseX > 100 && mouseX < 410 && mouseY > 100 && mouseY < 410)
+				{
+					X = X + 1;
+					Z = 0;
+				}
+			}
+		}
+			
+			
+				
+	if (mousePressed == false)
+		{
+				Z = 1
+		}
+		
+	if (mousePressed == true)
+		{
+ 		if (mouseButton == LEFT && V == 1)
+ 			{	 		
+ 			 	if (mouseX > 100 && mouseX < 410 && mouseY > 100 && mouseY < 410)
+				{
+					C = C + 1;
+					V = 0;
+				}
+			}
+		}
+		
+		
+	if (mousePressed == true)
+		{
+ 		if (mouseButton == LEFT && S == 1)
+ 			{	 		
+ 			 	if (mouseX > 100 && mouseX < 410 && mouseY > 100 && mouseY < 410)
+				{
+					A = A + 1;
+					S = 0;
+				}
+			}
+		}
+			
+			
+				
+	if (mousePressed == false)
+		{
+				S = 1
+		}
+			
+			
+				
+	if (mousePressed == false)
+		{
+				V = 1
+		}
+		
+	if (mousePressed == true)
+		{
+ 		if (mouseButton == LEFT && N == 1)
+ 			{	 		
+ 			 	if (mouseX > 100 && mouseX < 410 && mouseY > 100 && mouseY < 410)
+				{
+					B = B + 1;
+					N = 0;
+				}
+			}
+		}
+			
+			
+				
+	if (mousePressed == false)
+		{
+				N = 1
+		}
+		
+	//1st
+	if (mouseButton == LEFT && X == 8)
+	 {
+		image(asterixVariable,510,310);		
+	}
+	
+	if (mouseButton == LEFT && C == 8)
+	 {
+		image(asterixVariable,510,310);		
+	}
+	
+	if (mouseButton == LEFT && B == 8)
+	 {
+		image(asterixVariable,510,310);		
+	}
+		
+	if (mouseButton == LEFT && A == 8)
+	 {
+		image(asterixVariable,510,310);		
+	}
+	
+	
+	//2nd
+	if (mouseButton == LEFT && X == 9)
+	 {
+		image(asterixVariable,510+100,310);		
+	}
+		
+	if (mouseButton == LEFT && C == 9)
+	 {
+		image(asterixVariable,510+100,310);		
+	}
+	
+	if (mouseButton == LEFT && B == 9)
+	 {
+		image(asterixVariable,510+100,310);		
+	}
+	
+	
+	//3rd
+	if (mouseButton == LEFT && X == 10)
+	 {
+		image(asterixVariable,510+200,310);		
+	}
+	if (mouseButton == LEFT && C == 10)
+	 {
+		image(asterixVariable,510+200,310);		
+	}
+	
+	//4rd
+	
+	if (mouseButton == LEFT && X == 11)
+	 {
+		image(asterixVariable,510+300,310);		
+	}
+	
+	//reset
+	if (mouseButton == LEFT && X == 12)
+	 {
+		rect (810,415,100,50);
+		image(resetVariable,810,415)
+		text ("Incorrect password, please pressreset",720,500)
+	
+	}
+	
+	
+	
+	//reset
+		if (mousePressed == true)
+		{
+			if (mouseButton == LEFT)
+				{
+				if (mouseX > 810 && mouseX < 910 && mouseY > 415 && mouseY < 465)
+					{
+					link("index.html")
+
+					}
+				}
+			}	
+		//password 1260
+		
+	//1
+	if (mousePressed == true)
+		{
+ 		if (mouseButton == LEFT && a==0)
+ 			{	 		
+ 			 	if (mouseX > 100 && mouseX < 200 && mouseY > 100 && mouseY < 200)
+				{
+					a = 1;
+
+				}
+			}
+		}
+		
+		
+	if (mousePressed == false && a==1)
+		{
+		image(asterixVariable,510,310)		
+		}
+		
+	//4
+	if (mousePressed == true)
+		{
+			if (mouseButton == LEFT && a == 1)
+				{
+				if (mouseX > 100 && mouseX < 200 && mouseY > 205 && mouseY < 305)
+					{
+						b = 1;
+					}
+				}
+		
+		}
+		
+	if (mousePressed == false && b == 1)
+		{
+		image(asterixVariable,510+100,310)
+		}
+		
+	//6
+		
+	if (mousePressed == true)
+	{
+		if (mouseButton == LEFT && b == 1)
+		{
+			if (mouseX > 310 && mouseX < 410 && mouseY > 205 && mouseY < 305)
+			{
+				c = 1;
+			}
+		}
+	}
+	if (mousePressed == false && c == 1)
+	{
+		image(asterixVariable, 510+200,310)
+	}	
+	
+	//0
+	
+	if (mousePressed == true)
+	{
+		if (mouseButton == LEFT && c == 1)
+		{
+			if (mouseX > 205 && mouseX < 305 && mouseY > 415 && mouseY < 515)
+			{
+				d = 1;
+			}
+		}
+	}
+	
+
+	
+	if (mousePressed == false && d == 1)
+	{
+		image(asterixVariable,510+300,310)
+		e = 1;
+	}
+	
+
+	if (mousePressed == true)
+		{
+			if (mouseButton == LEFT && e == 1)
+				{
+					if (mouseX > 100 && mouseX < 200 && mouseY > 310 && mouseY < 410)
+					{ 
+							image(asterixVariable,510+300,310)
+					}
+				}
+				
+			}
+
+	if (mousePressed == true)
+		{
+ 		if (mouseButton == LEFT && e == 1)
+ 			{	 		
+ 			 	if (mouseX > 510 && mouseX < 710 && mouseY > 415 && mouseY < 515)
+				{
+						link("index2.html")
+
+				}
+			}
+		}
+
+}
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
